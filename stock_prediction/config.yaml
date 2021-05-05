@@ -1,0 +1,46 @@
+env:
+  chrome_driver_path: /STAT8002 Project/chromedriver
+  spark_home: /opt/apache-spark
+  java_home: /lib/jvm/default-runtime
+  synonyms_path: /STAT8002 Project/stock_prediction/data/synonyms.pkl
+  phrases_path: /STAT8002 Project/stock_prediction/data/phrases.txt
+  yahoo_finance_path: /STAT8002 Project/stock_prediction/stock_prediction/data/stock_prediction_TBL_WC_YAHOO_FINANCE_20210125_v2.csv
+  kaggle_benzinga_path: /STAT8002 Project/stock_prediction/stock_prediction/data/analyst_ratings_processed.csv
+
+para:
+  threads: 24
+  stock_list:
+    - AAPL
+    - ADI
+    - AMAT
+    - MXIM
+    - STM
+  start_date: 2020-01-24
+  end_date: 2021-01-25
+  cut_off_date: 2020-12-09
+  window_size: 2
+
+word2vec:
+  train: False
+  max_group_num: 100
+  similarity_method: cosine
+  eps: 0.3
+  min_samples: 5
+
+kge:
+  emb_dim: 100
+  lr: 0.0004
+  n_epochs: 1000
+  b_size: 512
+  margin: 0.5
+
+chrome_driver:
+  path: /STAT8002 Project/chromedriver
+  headless: True
+
+mysql:
+  host:
+  port: 3306
+  username: root
+  password:
+  db_name: stock_prediction
