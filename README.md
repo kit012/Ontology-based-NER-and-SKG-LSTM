@@ -1,6 +1,6 @@
 ## Using Ontology-based NER and Knowledge Graph for Stock Price Prediction
 
-##SKG-LSTM
+## SKG-LSTM
 ![SKG-LSTM](stock_prediction/data/SKG-LSTM.jpg)
 
 ### Dependencies
