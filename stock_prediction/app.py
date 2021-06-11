@@ -20,11 +20,10 @@ def run_ontology_ner():
 
 
 def run_skg_lstm():
-    # for s in config.stock_list:
-    s = 'AAPL'
-    df_node_train = KnowledgeGraphEmbedding(s).get_embedding_matrix()
-    skg_lstm = SKGLSTMModel(df_node_train, s)
-    skg_lstm.evaluate()
+    for s in config.stock_list:
+        df_node_train = KnowledgeGraphEmbedding(s).get_embedding_matrix()
+        skg_lstm = SKGLSTMModel(df_node_train, s)
+        skg_lstm.evaluate()
 
 
 def generate_testing_set():
@@ -35,10 +34,9 @@ def generate_testing_set():
 def start_job(job):
     job_dict = {
         'crawl_yahoo_finance': crawl_yahoo_finance,
-        'g': generate_testing_set,
-        'o': run_ontology_ner,
-        'l': run_skg_lstm
-
+        'generate_testing_set': generate_testing_set,
+        'run_ontology_ner': run_ontology_ner,
+        'run_skg_lstm': run_skg_lstm
     }
 
     if job in [*job_dict]:
